@@ -1,0 +1,10 @@
+DNA Shape Feature Analysis in Nucleosomal and Linker Sequences Plan
+
+1. Extract DNA shape features from FASTA sequence files.
+2. Data Processing to CSV.
+3. Perform Analysis
+    a. Plot Position Profile
+    b. Plot Distribution
+    c. Plot Heatmap
+    d. Plot Variance Profile
+    e. Plot Statistical Test
