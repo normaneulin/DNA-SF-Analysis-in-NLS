@@ -27,9 +27,9 @@ import sys
 from collections import Counter
 
 # ── paths ─────────────────────────────────────────────────────────────────────
-SHAPE_DIR  = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Homo_sapiens\fasta\shape"
-OUTPUT_DIR = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Homo_sapiens\csv_processed\shape"
-BASE_NAME  = "nucleosomes_vs_linkers_sapiens.fas"
+SHAPE_DIR  = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Caenorhabditis_elegans\fasta\shape"
+OUTPUT_DIR = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Caenorhabditis_elegans\csv_processed\shape"
+BASE_NAME  = "nucleosomes_vs_linkers_elegans.fas"
 
 # Features and their canonical lengths AFTER padding
 FEATURES = {
@@ -179,7 +179,7 @@ def process_feature(feature: str):
     target_len = FEATURES[feature]
     input_path = os.path.join(SHAPE_DIR, f"{BASE_NAME}.{feature}")
     output_path = os.path.join(OUTPUT_DIR,
-                               f"nucleosomes_vs_linkers_sapiens_{feature}.csv")
+                               f"nucleosomes_vs_linkers_elegans_{feature}.csv")
 
     print(f"\nProcessing {feature} …")
     print(f"  Input  : {input_path}")

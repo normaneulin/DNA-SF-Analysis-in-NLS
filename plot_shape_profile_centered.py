@@ -29,9 +29,9 @@ import matplotlib.ticker as ticker
 from scipy.interpolate import make_smoothing_spline
 
 # ── paths ─────────────────────────────────────────────────────────────────────
-SHAPE_CSV_DIR = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Homo_sapiens\csv_processed\shape"
-OUTPUT_DIR    = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Homo_sapiens\figures\shape_profile_centered"
-BASE_NAME     = "nucleosomes_vs_linkers_sapiens_{feature}.csv"
+SHAPE_CSV_DIR = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Caenorhabditis_elegans\csv_processed\shape"
+OUTPUT_DIR    = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Caenorhabditis_elegans\figures\shape_profile_centered"
+BASE_NAME     = "nucleosomes_vs_linkers_elegans_{feature}.csv"
 
 FEATURES  = ["EP", "HelT", "MGW", "ProT", "Roll"]
 N_POS     = 147
