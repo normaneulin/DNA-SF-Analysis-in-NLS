@@ -29,11 +29,11 @@ import matplotlib.ticker as ticker
 from scipy.interpolate import make_smoothing_spline
 
 # ── paths ─────────────────────────────────────────────────────────────────────
-SHAPE_CSV_DIR = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Caenorhabditis_elegans\csv_processed\shape"
-OUTPUT_DIR    = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Caenorhabditis_elegans\figures\shape_profile_centered"
-BASE_NAME     = "nucleosomes_vs_linkers_elegans_{feature}.csv"
+SHAPE_CSV_DIR = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Drosophila_melanogaster\csv_processed\shape"
+OUTPUT_DIR    = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Drosophila_melanogaster\figures\shape_profile_centered"
+BASE_NAME     = "nucleosomes_vs_linkers_melanogaster_{feature}.csv"
 
-FEATURES  = ["EP", "HelT", "MGW", "ProT", "Roll"]
+FEATURES  = ["HelT", "Rise", "Roll", "Shift", "Slide", "Tilt", "Buckle", "Opening", "ProT", "Shear", "Stagger", "Stretch", "EP", "MGW"]
 N_POS     = 147
 POS_COLS  = [f"pos_{i}" for i in range(1, N_POS + 1)]
 
@@ -52,11 +52,20 @@ COLORS = {
 }
 
 Y_LABELS = {
-    "EP":   "Mean EP",
-    "HelT": "Mean HelT (degrees)",
-    "MGW":  "Mean MGW (Angstrom)",
-    "ProT": "Mean ProT (degrees)",
-    "Roll": "Mean Roll (degrees)",
+    "HelT":    "Mean HelT (°)",     # Helix Twist — degrees
+    "Rise":    "Mean Rise (Å)",     # Rise — Angstroms
+    "Roll":    "Mean Roll (°)",     # Roll — degrees
+    "Shift":   "Mean Shift (Å)",    # Shift — Angstroms
+    "Slide":   "Mean Slide (Å)",    # Slide — Angstroms
+    "Tilt":    "Mean Tilt (°)",     # Tilt — degrees
+    "Buckle":  "Mean Buckle (°)",   # Buckle — degrees
+    "Opening": "Mean Opening (°)",  # Opening — degrees
+    "ProT":    "Mean ProT (°)",     # Propeller Twist — degrees
+    "Shear":   "Mean Shear (Å)",    # Shear — Angstroms
+    "Stagger": "Mean Stagger (Å)",  # Stagger — Angstroms
+    "Stretch": "Mean Stretch (Å)",  # Stretch — Angstroms
+    "EP":      "Mean EP (kT/e)",    # Electrostatic Potential — thermal energy per elementary charge
+    "MGW":     "Mean MGW (Å)",      # Minor Groove Width — Angstroms
 }
 # ──────────────────────────────────────────────────────────────────────────────
 

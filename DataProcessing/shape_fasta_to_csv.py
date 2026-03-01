@@ -27,23 +27,41 @@ import sys
 from collections import Counter
 
 # ── paths ─────────────────────────────────────────────────────────────────────
-SHAPE_DIR  = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Caenorhabditis_elegans\fasta\shape"
-OUTPUT_DIR = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Caenorhabditis_elegans\csv_processed\shape"
-BASE_NAME  = "nucleosomes_vs_linkers_elegans.fas"
+SHAPE_DIR  = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Drosophila_melanogaster\fasta\shape"
+OUTPUT_DIR = r"C:\Software Projects\Bioinformatics\DNA-SF-Analysis-in-NLS\data\DatasetNup_1\Drosophila_melanogaster\csv_processed\shape"
+BASE_NAME  = "nucleosomes_vs_linkers_melanogaster.fas"
 
 # Features and their canonical lengths AFTER padding
 FEATURES = {
-    "MGW":  147,
-    "ProT": 147,
-    "Roll": 147,   # native 146 → padded to 147
+    # 6 inter-base pair or base pair-step parameters
     "HelT": 147,   # native 146 → padded to 147
+    "Rise": 147,   # native 146 → padded to 147
+    "Roll": 147,   # native 146 → padded to 147
+    "Shift": 147,  # native 146 → padded to 147
+    "Slide": 147,  # native 146 → padded to 147
+    "Tilt": 147,   # native 146 → padded to 147
+    
+    # 6 intra-base pair parameters
+    "Buckle": 147,
+    "Opening": 147,
+    "ProT": 147,
+    "Shear": 147,
+    "Stagger": 147,
+    "Stretch": 147,
+    
+    # Non-base pair parameters
+    "MGW":  147,
     "EP":   147,
 }
 
-# Native (pre-padding) lengths for Roll / HelT
+# Native (pre-padding) lengths 
 NATIVE_LENGTHS = {
-    "Roll": 146,
     "HelT": 146,
+    "Rise": 146,
+    "Roll": 146,
+    "Shift": 146,
+    "Slide": 146,
+    "Tilt": 146,
 }
 # ──────────────────────────────────────────────────────────────────────────────
 
@@ -118,7 +136,7 @@ def build_rows(filepath: str, feature: str, target_len: int):
 
         # ── length validation / correction ────────────────────────────────
         if n == native_len and target_len > native_len:
-            # Expected short feature (Roll / HelT): pad with one 0
+            # Expected short feature: pad with one 0
             values.append(0.0)
             n += 1
 
@@ -179,7 +197,7 @@ def process_feature(feature: str):
     target_len = FEATURES[feature]
     input_path = os.path.join(SHAPE_DIR, f"{BASE_NAME}.{feature}")
     output_path = os.path.join(OUTPUT_DIR,
-                               f"nucleosomes_vs_linkers_elegans_{feature}.csv")
+                               f"nucleosomes_vs_linkers_melanogaster_{feature}.csv")
 
     print(f"\nProcessing {feature} …")
     print(f"  Input  : {input_path}")
